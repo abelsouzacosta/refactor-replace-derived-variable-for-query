@@ -3,18 +3,25 @@
 // first we should create a function to calculate production
 
 export class ProductionPlan {
-  protected adjusments: any[];
+  protected adjustments: any[];
 
   constructor(protected production: number = 0) {
-    this.adjusments = [];
+    this.adjustments = [];
   }
 
   getProduction() {
     return this.production;
   }
 
+  getCalculatedProduction() {
+    return this.adjustments.reduce(
+      (sum, adjustment) => sum + adjustment.amount,
+      0
+    );
+  }
+
   applyAdjustment(anAdjusment: any) {
-    this.adjusments.push(anAdjusment);
+    this.adjustments.push(anAdjusment);
     this.production += anAdjusment.amount;
   }
 }
