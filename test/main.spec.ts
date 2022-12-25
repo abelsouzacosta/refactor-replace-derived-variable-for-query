@@ -14,12 +14,4 @@ describe("ProductionPlan", () => {
 
     expect(productionPlan.getProduction()).toEqual(23);
   });
-
-  it("Should return the calculated adjusment", () => {
-    let productionPlan = new ProductionPlan();
-
-    productionPlan.applyAdjustment({ amount: 90 });
-
-    expect(productionPlan.getCalculatedProduction()).toBe(90);
-  });
 });

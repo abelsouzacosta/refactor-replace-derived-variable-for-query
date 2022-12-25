@@ -10,15 +10,13 @@ export class ProductionPlan {
   }
 
   getProduction() {
-    return this.getCalculatedProduction();
-  }
-
-  getCalculatedProduction() {
     return this.adjustments.reduce(
       (sum, adjustment) => sum + adjustment.amount,
       0
     );
   }
+
+  getCalculatedProduction() {}
 
   applyAdjustment(anAdjusment: any) {
     this.adjustments.push(anAdjusment);
