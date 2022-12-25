@@ -10,7 +10,7 @@ export class ProductionPlan {
   }
 
   getProduction() {
-    return this.production;
+    return this.getCalculatedProduction();
   }
 
   getCalculatedProduction() {
