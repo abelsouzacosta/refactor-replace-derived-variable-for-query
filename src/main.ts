@@ -5,7 +5,7 @@
 export class ProductionPlan {
   protected adjustments: any[];
 
-  constructor(protected production: number = 0) {
+  constructor() {
     this.adjustments = [];
   }
 
@@ -16,10 +16,7 @@ export class ProductionPlan {
     );
   }
 
-  getCalculatedProduction() {}
-
   applyAdjustment(anAdjusment: any) {
     this.adjustments.push(anAdjusment);
-    this.production += anAdjusment.amount;
   }
 }
